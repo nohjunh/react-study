@@ -1,17 +1,32 @@
-import HandButton from './HandButton'
+import Button from './Button';
+import Dice from './Dice';
+import {useState} from 'react';
 
-function App() {
-  const handleClick= (value)=>{
-    alert(value);
-  };
+function random(n){
+  return Math.ceil(Math.random()*n)
+}
 
-  return ( // props = 컴포넌트에 속성값 넣는 방법.
+function App(){
+ const [num, setNum] = useState(1);
+
+ const handleClearClick= () =>{
+  setNum(1);
+ }
+
+ const handleRollClick= () => {
+  const nextNum = random(6);
+  setNum(nextNum);
+ }
+
+ return (
+  <div>
     <div>
-      <HandButton value="rock" onClick={handleClick}/>
-      <HandButton value="scissor" onClick={handleClick}/>
-      <HandButton value="paper" onClick={handleClick}/>
+      <Button onClick={handleRollClick}>던지기</Button>
+      <Button onClick={handleClearClick}>처음부터</Button>
     </div>
-  );
+    <Dice color='red' num={num} />
+  </div>
+ );
 }
 
 export default App;
