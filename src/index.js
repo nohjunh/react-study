@@ -1,18 +1,33 @@
 import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const WINS = {
+  rock: 'scissor',
+  scissor: 'paper',
+  paper: 'rock',
+};
 
-const product = "macbook";
-const size= "Air";
-const imageUrl='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/MacBook_with_Retina_Display.png/500px-MacBook_with_Retina_Display.png';
-
-function handleClick(e){
-  alert('곧 도착합니다.');
+function getResult(left, right) {
+  if (WINS[left] === right) return '승리';
+  else if (left === WINS[right]) return '패배';
+  return '무승부';
 }
+
+function handleClick() {
+  alert('가위바위보!');
+}
+
+const me = 'rock';
+const other = 'scissor';
+
+let value= getResult(me,other);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <h1>{product+' '+size} 주문하기</h1>
-    <img src={imageUrl} alt="제품 사진" />
-    <button onClick={handleClick}>확인</button>
+    <h1>가위바위보</h1>
+    <h2>{value}</h2>
+    <button onClick={handleClick}>가위</button>
+    <button onClick={handleClick}>바위</button>
+    <button onClick={handleClick}>보</button>
   </>
 );
