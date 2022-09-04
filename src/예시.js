@@ -1,3 +1,65 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <title>가위 바위 보!</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body cz-shortcut-listen="true">
+  <div id="root">
+    <div class="App">
+      <h1 class="App-heading">가위바위보</h1>
+      <img class="App-reset" src="ic-reset.svg" alt="초기화" />
+      <div class="App-scores">
+        <div class="Score">
+          <div class="Score-num">0</div>
+          <div class="Score-name">나</div>
+        </div>
+        <div class="App-versus"></div>
+        <div class="Score">
+          <div class="Score-num">0</div>
+          <div class="Score-name">상대</div>
+        </div>
+      </div>
+      <div class="Box App-box">
+        <div class="Box-inner">
+          <div class="App-hands">
+            <div class="Hand">
+              <img class="Hand-icon" src="rock.svg" alt="rock" />
+            </div>
+            <div class="App-versus">VS</div>
+            <div class="Hand">
+              <img class="Hand-icon" src="rock.svg" alt="rock" />
+            </div>
+          </div>
+          <div class="App-bet">
+            <span>배점</span><input type="number" min="1" max="9" step="1" value="1" /><span>배</span>
+          </div>
+          <div class="App-history">
+            <h2>승부기록</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <button class="HandButton">
+        <img class="HandButton-icon" src="rock.svg" alt="rock" />
+      </button>
+      <button class="HandButton">
+        <img class="HandButton-icon" src="scissor.svg" alt="scissor" />
+      </button>
+      <button class="HandButton">
+        <img class="HandButton-icon" src="paper.svg" alt="paper" />
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
 @font-face {
   font-style: normal;
   font-weight: normal;
@@ -26,7 +88,7 @@
   width: 207px;
   height: 207px;
   text-align: center;
-  background-image: url(./assets/yellow.svg);
+  background-image: url(yellow.svg);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: contain;
@@ -42,8 +104,8 @@
   user-select: none;
 }
 
-.Hand.winner {
-  background-image: url(./assets/yellow-win.svg);
+.Hand .winner {
+  background-image: url(yellow-win.svg);
 }
 
 .HandButton {
@@ -54,7 +116,7 @@
   text-align: center;
   cursor: pointer;
   background-color: transparent;
-  background-image: url(./assets/purple.svg);
+  background-image: url(purple.svg);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: contain;
@@ -67,7 +129,7 @@
 }
 
 .HandButton:hover {
-  background-image: url(./assets/yellow.svg);
+  background-image: url(yellow.svg);
 }
 
 .HandButton:hover .HandButton-icon {
@@ -128,8 +190,6 @@
 }
 
 .App-reset {
-  border: 0px;
-  background-color: transparent;
   position: absolute;
   top: 48px;
   right: 49px;
@@ -178,7 +238,7 @@
   width: 73px;
   margin: 0 9px;
   padding: 14px 10px;
-  border: 2px solid #514d5a;
+  border: 2px solid #753cf7;
   border-radius: 10px;
   color: #fff;
   font-size: 17px;
@@ -202,3 +262,11 @@
   letter-spacing: -0.24px;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: 'GmarketSansMedium', sans-serif;
+}
+
+body {
+  background-color: #40089a;
+}
