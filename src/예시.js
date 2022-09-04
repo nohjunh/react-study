@@ -1,3 +1,6 @@
+
+예시 HTML
+
 <html lang="ko">
 
 <head>
@@ -16,7 +19,7 @@
           <div class="Score-num">0</div>
           <div class="Score-name">나</div>
         </div>
-        <div class="App-versus"></div>
+        <div class="App-versus">:</div>
         <div class="Score">
           <div class="Score-num">0</div>
           <div class="Score-name">상대</div>
@@ -56,9 +59,7 @@
 </body>
 
 </html>
-
-
-
+예시 CSS
 
 @font-face {
   font-style: normal;
@@ -104,7 +105,7 @@
   user-select: none;
 }
 
-.Hand .winner {
+.Hand.winner {
   background-image: url(yellow-win.svg);
 }
 
